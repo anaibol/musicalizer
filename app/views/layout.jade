@@ -1,0 +1,47 @@
+doctype 5
+html(lang="es-AR")
+  head
+    meta(charset="utf-8")
+    //-title= "Music Explorer"
+    link(href='/css/bootstrap.css', rel='stylesheet')
+    //-link(href='/css/jScrollPane.css', rel='stylesheet')
+    //-link(href='/css/kendo.default.min.css', rel='stylesheet')
+    //-link(href='/css/kendo.common.min.css', rel='stylesheet')
+    != css('styles.css')
+  body
+    block header
+    block content
+    block footer
+    
+    //-script(src='/js/zepto.min.js')
+    script(src='/js/jquery-1.8.3.min.js')
+    script(src='/js/jquery.color-2.1.1.min.js')
+    script(src='/js/jquery.sortElements.js')
+    //-script(src='/js/drag-drop.min.js')
+    //-script(src='/js/jquery.drag-drop.plugin.min.js')
+    //-script(src='/js/sorttable.js')
+    //-script(src='/js/standardista-table-sorting.js') 
+    //-script(src='/js/jquery-ui-1.9.2.custom.min.js')
+    //-script(src='/js/lodash-0.10.min.js')
+    //-script(src='/js/underscore-1.4.2.min.js')
+    //-script(src='/js/backbone-0.9.2.min.js')
+    //-script(src='/js/backbone-forms.min.js')
+    //-script(src='/js/list.js')
+    //-script(src='/js/jquery.mousewheel.js')
+    //-script(src='/js/jquery.em.js')
+    //-script(src='/js/jScrollPane.js')
+    //-script(src='/js/backbone.syphon-0.4.1.min.js')
+    //-script(src='/js/soundmanager2-jsmin.js')
+    //-script(src='/js/jquery.jkey.min.js')
+
+    script(src='/js/batman.min.js')
+    script(src='/js/batman.jquery.min.js')
+
+    != js('models.js')
+    != js('colResizable.js')
+    //-!= js('sortTable.js')
+    != js('tableDnd.js')
+    != js('dragDrop.js')
+    != js('placeholders.js')
+
+    != js('scripts.js')

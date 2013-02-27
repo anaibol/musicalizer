@@ -1,0 +1,166 @@
+extends layout
+
+block header
+  div(data-yield='main')
+  div(data-defineview='messages/index')
+      table#messages.table.table-striped
+        tbody
+          tr(data-foreach-m='messages', data-bind-id='m.id')
+            td.duration
+              div(data-showif='m.event_duration', data-bind='m.event_duration')
+  header.1
+    .bg.1
+
+    .content.1
+      section.3-4.controls
+        .btn-group
+          a.btn(href='#', title='play')
+            i.icon-play
+          a.btn(href='#', title='pause')
+            i.icon-pause
+          a.btn(href='#', title='previous')
+            i.icon-step-backward
+          a.btn(href='#', title='next')
+            i.icon-step-forward
+
+          a.btn(href='#', title='volume off')
+            i.icon-volume-off
+          a.btn(href='#', title='volume down')
+            i.icon-volume-down
+          a.btn(href='#', title='volume up')
+            i.icon-volume-up
+
+        //-.others
+          a.btn(href='#')
+            i.icon-reorder
+          a.btn(href='#')
+            i.icon-remove
+          a.btn(href='#')
+            i.icon-trash
+          a.btn(href='#')
+            i.icon-random
+          a.btn(href='#')
+            i.icon-refresh
+          a.btn(href='#')
+            i.icon-headphones
+          a.btn(href='#')
+            i.icon-volume-off
+          a.btn(href='#')
+            i.icon-volume-down
+          a.btn(href='#')
+            i.icon-volume-up
+          a.btn(href='#')
+            i.icon-zoom-in
+          a.btn(href='#')
+            i.icon-zoom-out
+          a.btn(href='#')
+            i.icon-th-large
+          a.btn(href='#')
+            i.icon-list
+          a.btn(href='#')
+            i.icon-link
+          a.btn(href='#')
+            i.icon-save
+          a.btn(href='#')
+            i.icon-fullscreen
+          a.btn(href='#')
+            i.icon-download-alt
+          a.btn(href='#')
+            i.icon-edit
+          a.btn(href='#')
+            i.icon-lock
+          a.btn(href='#')
+            i.icon-unlock
+      section.1-4
+        form.form-search
+          //-.input-prepend
+            button.btn(type='submit') Search
+            input.search.span2.search-query(type='text', placeholder='Enter fugitive name...')
+
+          a.btn(href='#', title='upload')
+            i.icon-upload-alt
+
+          .input-append.btn
+            input.search.span2.search-query(type='text', placeholder='Enter fugitive name...', autofocus, data-bind="Player.query")
+            button.btn(type='submit', title='search')
+              i.icon-search
+
+block content
+  .wrapper.1
+    //-(data-showif="Song.all.length")
+    div(data-yield="main")
+    div(data-defineview="messages/index")
+    section.3-4.results.sorttable
+      table.1.thead.table.table-striped#list
+        thead
+          tr
+            th.number #
+            th.artist Artista
+            th.album Álbum
+            th.song Canción
+
+      table.1.tbody.table.table-striped
+        thead
+          tr
+            th.number
+            th.artist
+            th.album
+            th.song
+
+        tbody
+          tr(data-foreach-m="messages")
+            //-, data-showif="Song.all.length"
+            td.number
+            td.artist(data-bind="s.published")
+            td.album(data-bind="s.published")
+            td.song(data-bind="s.published")
+
+    section.1-4.playlist
+      table.table.table-striped.sortable
+        thead
+          tr
+            th #
+            th First Name
+            th Last Name
+            th Username
+        tbody
+          tr
+            td.number
+            td Mark
+            td Otto
+            td @mdo
+          tr
+            td.number
+            td Jacob
+            td Thornton
+            td @fat
+          tr
+            td.number
+            td Larry
+            td the Bird
+            td @twitter
+
+    //-h1 Music is ready to <span data-bind="window.Music.mission"></span>!
+
+    //-#batman
+      input.search(type='text', data-bind='Music.mission')
+
+      form(data-event-change='controllers.app.search')
+        fieldset
+          .input
+            input.search.xlarge(type='text', placeholder='Enter fugitive name...', data-bind='Music.query')
+
+      p(data-bind='Tracer.Tweet.all.length | prepend \'Found \' | append \' tweets.\'', data-showif='Tracer.hasSearched')
+        .row(data-foreach-tweet='Tracer.Tweet.all')
+          .span1.columns
+            img(data-bind-src='tweet.profile_image_url')
+          .span8.columns
+            blockquote
+              p(data-bind='tweet.text')
+              small
+              a(data-bind='tweet.from_user | prepend \'@\'', data-bind-href='tweet.from_user | prepend \'http://-twitter.com/#!\'')
+
+
+block footer
+  footer
+    |footer
